@@ -27,5 +27,3 @@ input.onButtonPressed(Button.A, function () {
 PTKidsBITRobot.SensorCalibrate()
 PTKidsBITRobot.servoWrite(Servo_Write.P8, 110)
 PTKidsBITRobot.servoWrite(Servo_Write.P12, 115)
-PTKidsBITRobot.motorWrite(Motor_Write.Motor_Left, 0)
-PTKidsBITRobot.motorWrite(Motor_Write.Motor_Right, 0)
