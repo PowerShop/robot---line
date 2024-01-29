@@ -1,40 +1,12 @@
 input.onButtonPressed(Button.B, function () {
-    PTKidsBITRobot.ForwardTIME(
-    500,
-    50,
-    100,
-    0.01,
-    0
-    )
-    PTKidsBITRobot.ForwardLINE(
-    Find_Line.Center,
-    50,
-    100,
-    0.01,
-    0
-    )
-    PTKidsBITRobot.ForwardTIME(
-    100,
-    50,
-    100,
-    0.01,
-    0
-    )
-    PTKidsBITRobot.motorStop()
-    basic.pause(100)
-    PTKidsBITRobot.TurnLINE(
-    Turn_Line.Left,
-    50,
-    Turn_ADC.ADC2,
-    200
-    )
-    PTKidsBITRobot.motorStop()
-    basic.pause(100)
     PTKidsBITRobot.servoWrite(Servo_Write.P8, 110)
-    basic.pause(100)
+    basic.pause(1000)
+    PTKidsBITRobot.servoWrite(Servo_Write.P12, 105)
+    basic.pause(2500)
+    PTKidsBITRobot.servoWrite(Servo_Write.P8, 15)
 })
-basic.showIcon(IconNames.Yes)
-PTKidsBITRobot.setSensorColorAll(LED_Color.Green)
-PTKidsBITRobot.SensorCalibrate()
+PTKidsBITRobot.setSensorColorAll(LED_Color.Blue)
 PTKidsBITRobot.servoWrite(Servo_Write.P8, 15)
+basic.pause(300)
 PTKidsBITRobot.servoWrite(Servo_Write.P12, 170)
+basic.showIcon(IconNames.Happy)
