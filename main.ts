@@ -7,7 +7,7 @@ function Loop () {
             65,
             100,
             0.03,
-            0.04
+            0.015
             )
         }
     }
@@ -15,6 +15,9 @@ function Loop () {
     basic.pause(5000)
     Loop()
 }
+input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
+    servos.P1.setAngle(170)
+})
 function getOutFromStart () {
     PTKidsBITRobot.motorGo(50, 50)
     basic.pause(300)
@@ -23,33 +26,49 @@ function getOutFromStart () {
     65,
     100,
     0.03,
-    0.04
+    0.015
     )
     PTKidsBITRobot.motorStop()
     basic.pause(300)
     PTKidsBITRobot.ForwardLINECount(
     Find_Line.Center,
-    1,
+    2,
     65,
     100,
     0.03,
-    0.04
+    0.015
     )
     PTKidsBITRobot.motorStop()
+    randomLeftRight()
     basic.pause(2000)
     startState += 1
+}
+function randomLeftRight () {
+    if (randint(0, 1) == 0) {
+        PTKidsBITRobot.TurnLINE(
+        Turn_Line.Left,
+        70,
+        Turn_ADC.ADC1,
+        200
+        )
+        PTKidsBITRobot.motorStop()
+    } else {
+        PTKidsBITRobot.TurnLINE(
+        Turn_Line.Right,
+        70,
+        Turn_ADC.ADC4,
+        200
+        )
+        PTKidsBITRobot.motorStop()
+    }
 }
 input.onButtonPressed(Button.B, function () {
     Loop()
 })
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    PTKidsBITRobot.servoWrite(Servo_Write.P8, 15)
-    PTKidsBITRobot.servoWrite(Servo_Write.P12, 170)
-})
 let startState = 0
 basic.showIcon(IconNames.Sad)
 PTKidsBITRobot.setSensorColorAll(LED_Color.Blue)
-PTKidsBITRobot.servoWrite(Servo_Write.P12, 3)
+PTKidsBITRobot.servoWrite(Servo_Write.P12, 90)
 PTKidsBITRobot.servoWrite(Servo_Write.P8, 110)
 PTKidsBITRobot.SensorCalibrate()
 PTKidsBITRobot.servoWrite(Servo_Write.P12, 170)

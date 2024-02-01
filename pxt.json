@@ -5,7 +5,8 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "pxt-PTKidsBIT-Robot": "github:ibuilds/pxt-ptkidsbit-robot#v1.6.4"
+        "pxt-PTKidsBIT-Robot": "github:ibuilds/pxt-ptkidsbit-robot#v1.6.4",
+        "servo": "*"
     },
     "files": [
         "main.blocks",
